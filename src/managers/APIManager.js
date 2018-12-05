@@ -43,4 +43,4 @@ class APIManager {
   }
 }
 
-export default APIManager
+export default new APIManager("players")
