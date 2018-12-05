@@ -17,8 +17,8 @@ class ApplicationViews extends Component {
   //   );
 
   playerList = () => {
-    APIManager.getAll().then(players =>
-      {console.log(players)
+    APIManager.getAll().then(players => {
+      // console.log(players)
       this.setState({ players: players })})
   };
   
@@ -30,7 +30,7 @@ class ApplicationViews extends Component {
         <h1>Hello</h1>
         <section>
         {this.state.players.map(player=> {
-          console.log(player)
+          // console.log(player)
           return <div>{player.player.firstName} {player.player.lastName}</div>
         })}
         </section>
