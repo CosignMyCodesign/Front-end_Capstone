@@ -8,14 +8,7 @@ class ApplicationViews extends Component {
     players: []
   };
 
-  // addFriend = (myNewFriend, myUsername) =>
-  // FriendsManager.addAndList(myNewFriend, myUsername).then(() => FriendsManager.all())
-  //   .then(friends =>
-  //     this.setState({
-  //       friends: friends
-  //     })
-  //   );
-
+// Gets all of the players from the database
   playerList = () => {
     APIManager.getAll().then(players => {
       // console.log(players)
@@ -24,6 +17,7 @@ class ApplicationViews extends Component {
   
 
   render() {
+    // Invokes function to get all of the players
     this.playerList()
     return (
       <React.Fragment>
