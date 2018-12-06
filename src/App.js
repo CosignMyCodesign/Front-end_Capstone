@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import ApplicationViews from "./components/ApplicationViews"
+import IsAuth from "./components/auth/IsAuth"
 import './App.css';
-import NavBar from "./components/nav/NavBar"
-import { Container } from 'semantic-ui-react'
 
-export default class App extends Component {
+class App extends Component {
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+
+
+  state = {
+    activeUser: this.isAuthenticated()
+  }
+
+ setAuth = () => {
+   this.setState({ auth: this.isAuthenticated() })
+ }
   render() {
-      return (
-          <React.Fragment>
-              <NavBar />
-              <Container>
-                <ApplicationViews />
-              </Container>
-          </React.Fragment>
-      )
+    return <React.Fragment>
+        <IsAuth isAuthenticated={this.isAuthenticated} setAuth={this.setAuth} />
+      </React.Fragment>
   }
 }
 
+export default App

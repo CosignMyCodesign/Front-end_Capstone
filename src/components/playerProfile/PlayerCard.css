@@ -1,0 +1,5 @@
+.playerCard {
+  border: 1px solid #663e03;
+  display: flex;
+  margin: 2px
+}
