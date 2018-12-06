@@ -1,7 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import APIManager from "../managers/APIManager";
-import Home from "./home/Home"
+// import Home from "./home/Home"
 import PlayerCard from "./playerProfile/PlayerCard"
 // import Login from "./authentication/Login";
 // import Register from "./authentication/Registration";
@@ -47,18 +47,17 @@ class ApplicationViews extends Component {
     // if (this.state.initialized) {
     return (
       <React.Fragment>
-        {/* fetching the players and displaying their first and last name to the DOM, this serves no purpose now, just wanted to make sure my fetchs were working */}
-        <h1>Hello</h1>
+      
         <div>
           <PlayerCard players={this.state.players}/>
         </div>
-        <Route
+        {/* <Route
           exact
           path="/home"
           render={props => {
             return <Home />;
           }}
-        />
+        /> */}
         {/* <Route
           exact
           path="/login"
