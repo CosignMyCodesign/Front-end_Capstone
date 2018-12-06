@@ -1,0 +1,28 @@
+import React, { Component } from "react";
+import "./PlayerCard.css"
+
+export default class PlayerCard extends Component {
+  render() {
+    return (
+      <section>
+        {this.props.players.map(member => {
+          // console.log(player)
+          return (
+            <div className="playerCard">
+              Name: {member.player.firstName} {member.player.lastName}
+              <br />
+              Position: {member.player.primaryPosition}
+              <br />
+              Age: {member.player.age}
+              <br />
+              Height: {member.player.height}
+              <br />
+              Weight: {member.player.weight}
+              <br />
+            </div>
+          );
+        })}
+      </section>
+    );
+  }
+}
