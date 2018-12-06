@@ -30,7 +30,7 @@ export default Object.create(null, {
         },
         body: JSON.stringify(newObject)
       }).then(e => e.json())
-        .then(() => this.all(resource))
+        // .then(() => this.all(resource))
     }
   },
  

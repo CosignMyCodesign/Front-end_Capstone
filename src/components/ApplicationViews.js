@@ -1,7 +1,7 @@
 // import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import APIManager from "../managers/APIManager";
-// import Home from "./home/Home"
+import Home from "./home/Home"
 import PlayerCard from "./playerProfile/PlayerCard"
 
 
@@ -33,7 +33,9 @@ class ApplicationViews extends Component {
     // if (this.state.initialized) {
     return (
       <React.Fragment>
-      
+        <div>
+         <Home/>
+        </div>
         <div>
           <PlayerCard players={this.state.players}/>
         </div>

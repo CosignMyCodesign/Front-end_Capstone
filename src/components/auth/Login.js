@@ -30,6 +30,7 @@ export default class Login extends Component {
           alert(`username ${this.state.username} already exits!`)
         } else if (!users.length) {
           APIManager.add("users", newUser).then(user =>{
+            console.log(user)
             sessionStorage.setItem("credentials", parseInt(user.id))
             this.props.setAuth()
           }

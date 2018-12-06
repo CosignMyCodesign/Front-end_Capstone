@@ -28,7 +28,7 @@ export default class NavBar extends Component {
           Home
         </Menu.Item>
 
-        <h1 className="header">Squad Spawn</h1>
+        <h1 className="title">Squad Spawn</h1>
 
         <Menu.Item
           name="View My Squad"

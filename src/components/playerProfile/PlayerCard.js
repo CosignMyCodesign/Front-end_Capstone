@@ -11,6 +11,8 @@ export default class PlayerCard extends Component {
             <div className="playerCard" key={member.player.id}>
               Name: {member.player.firstName} {member.player.lastName}
               <br />
+              <img alt="player" src={member.player.officialImageSrc}/>
+              <br />
               Position: {member.player.primaryPosition}
               <br />
               Age: {member.player.age}
