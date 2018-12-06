@@ -1,16 +1,14 @@
-import { Route, Redirect } from "react-router-dom";
+// import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import APIManager from "../managers/APIManager";
 // import Home from "./home/Home"
 import PlayerCard from "./playerProfile/PlayerCard"
-// import Login from "./authentication/Login";
-// import Register from "./authentication/Registration";
-// import UserManager from "../managers/UserManager";
+
 
 class ApplicationViews extends Component {
 
   state = {
-    user: [],
+    users: [],
     players: [],
     initialized: false
   };
@@ -18,26 +16,14 @@ class ApplicationViews extends Component {
   componentDidMount() {
     // Invokes function to get all of the players
     this.listAllPlayers()
-    // From zacs login/registration
-    // let usersLoading = UserManager.getAll().then(allUsers => {
-    //   this.setState({
-    //     users: allUsers
-    //   });
-    // });
+   
   }
 
-  // Don't need this yet, but will eventually I think (ask zac/ousama)
-  //   Promise.all([usersLoading]).then(() => {
-  //     this.setState({
-  //       initialized: true
-  //     });
-  //   });
-  // }
-
+ 
  
 // Gets all of the players from the database
   listAllPlayers = () => {
-    APIManager.getAll().then(players => {
+    APIManager.all("players").then(players => {
       // console.log(players)
       this.setState({ players: players })})
   };
@@ -74,13 +60,6 @@ class ApplicationViews extends Component {
         /> */}
       </React.Fragment>
     );
-        // } else {
-        //   return (
-        //     <React.Fragment>
-        //       loading...
-        //     </React.Fragment>
-        //   )
-        // }
   }
 }
 

@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import { Menu, Icon, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-export default class MenuExampleBasic extends Component {
+// import APIManager from "../managers/APIManager";
+export default class NavBar extends Component {
   state = {};
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  logout = () => {
+    sessionStorage.clear("credentials")
+    this.props.setAuth()
+  }
 
   render() {
     const { activeItem } = this.state;
@@ -33,6 +39,17 @@ export default class MenuExampleBasic extends Component {
           onClick={this.handleItemClick}
         >
           View My Squad
+        </Menu.Item>
+
+        <Menu.Item
+          name="Logout"
+          as={Link}
+          to="/"
+          position="right"
+          active={activeItem === "Logout"}
+          onClick={this.logout}
+        >
+          Logout
         </Menu.Item>
       </Menu>
     );
