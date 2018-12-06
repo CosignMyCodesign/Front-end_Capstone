@@ -8,7 +8,7 @@ export default class PlayerCard extends Component {
         {this.props.players.map(member => {
           // console.log(player)
           return (
-            <div className="playerCard">
+            <div className="playerCard" key={member.player.id}>
               Name: {member.player.firstName} {member.player.lastName}
               <br />
               Position: {member.player.primaryPosition}
