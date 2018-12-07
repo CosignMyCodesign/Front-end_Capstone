@@ -7,6 +7,11 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}/${id}`).then(e => e.json())
     }
   },
+  singlePlayer: {
+    value: function(resource, id) {
+      return fetch(`${remoteURL}/${resource}?player.id=${id}`).then(e => e.json())
+    }
+  },
   all: {
     value: function(resource) {
       return fetch(`${remoteURL}/${resource}`).then(e => e.json())

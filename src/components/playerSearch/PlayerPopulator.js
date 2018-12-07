@@ -7,7 +7,7 @@ import "./PlayerPopulator.css";
 export default class PlayerPopulator extends Component {
   state = {
     users: [],
-    players: []
+    players: {}
   };
 
   componentDidMount() {
@@ -17,9 +17,9 @@ export default class PlayerPopulator extends Component {
   }
 
   listPlayer = () => {
-    APIManager.single("players", 9157).then(player => {
-      console.log(player)
-      this.setState({ players: player })})
+    APIManager.singlePlayer("players", 9157).then(player => {
+      console.log(player[0].player)
+      this.setState({ players: player[0].player })})
   };
 
   render() {
@@ -28,7 +28,8 @@ export default class PlayerPopulator extends Component {
         
         <div className="playerSelection">
           <li>
-          
+          {this.state.players.firstName} {this.state.players.lastName}
+          <img alt="kyrie irving" src={this.state.players.officialImageSrc}/>
             <br />
             <br />
             <Button.Group>
