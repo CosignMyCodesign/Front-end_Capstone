@@ -1,0 +1,10 @@
+.populatorContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px
+}
+
+.playerSelection {
+  display: flex;
+  justify-content: center
+}

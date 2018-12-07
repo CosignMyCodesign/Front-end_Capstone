@@ -1,0 +1,16 @@
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px
+}
+
+.searchHeader {
+  display: flex;
+  justify-content: center;
+  margin: 20px
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center
+}

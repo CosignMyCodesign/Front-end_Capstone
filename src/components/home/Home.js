@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { Header, Icon } from "semantic-ui-react";
 import NavBar from "../nav/NavBar";
 import ApplicationViews from "../ApplicationViews";
+import PlayerSearch from "../playerSearch/PlayerSearch"
+import PlayerPopulator from "../playerSearch/PlayerPopulator"
 import "./Home.css";
 
 export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
+        <NavBar {...this.props} />
+        
         <Header
           className="header"
           as="h3"
@@ -21,7 +25,9 @@ export default class Home extends Component {
           Keep up to date with your favorite NBA athletes and assemble your own
           custom squad!
         </Header>
-        <NavBar {...this.props} />
+        <PlayerSearch/>
+        <PlayerPopulator/>
+
         <ApplicationViews {...this.props} />
       </React.Fragment>
     );
