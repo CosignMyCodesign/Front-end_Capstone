@@ -30,6 +30,7 @@ export default Object.create(null, {
         },
         body: JSON.stringify(newObject)
       }).then(e => e.json())
+        // Had to comment this out because it was causing an issue when registering a new user, the value (which should be the userID) was coming back as NaN because it was bringing back all of the users in the database.
         // .then(() => this.all(resource))
     }
   },
