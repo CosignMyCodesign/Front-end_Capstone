@@ -8,3 +8,9 @@
   display: flex;
   justify-content: center
 }
+
+/* Need to put button group in a div first */
+/* .buttonGroup {
+  display: flex;
+  justify-content: center
+} */

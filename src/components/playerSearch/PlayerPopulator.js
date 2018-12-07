@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import APIManager from "../../managers/APIManager"
+import APIManager from "../../managers/APIManager";
 import "./PlayerPopulator.css";
 
 export default class PlayerPopulator extends Component {
@@ -12,27 +12,26 @@ export default class PlayerPopulator extends Component {
 
   componentDidMount() {
     // Invokes function to get all of the players
-    this.listPlayer()
-   
+    this.listPlayer();
   }
 
   listPlayer = () => {
     APIManager.singlePlayer("players", 9157).then(player => {
-      console.log(player[0].player)
-      this.setState({ players: player[0].player })})
+      console.log(player[0].player);
+      this.setState({ players: player[0].player });
+    });
   };
 
   render() {
     return (
       <div className="populatorContainer">
-        
         <div className="playerSelection">
           <li>
-          {this.state.players.firstName} {this.state.players.lastName}
-          <img alt="kyrie irving" src={this.state.players.officialImageSrc}/>
+            {this.state.players.firstName} {this.state.players.lastName}
+            <img alt="kyrie irving" src={this.state.players.officialImageSrc} />
             <br />
             <br />
-            <Button.Group>
+            <Button.Group className="buttonGroup">
               <Button
                 className="button-link"
                 color="blue"
