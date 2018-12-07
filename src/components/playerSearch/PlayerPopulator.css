@@ -1,0 +1,16 @@
+.populatorContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px
+}
+
+.playerSelection {
+  display: flex;
+  justify-content: center
+}
+
+/* Need to put button group in a div first */
+/* .buttonGroup {
+  display: flex;
+  justify-content: center
+} */
