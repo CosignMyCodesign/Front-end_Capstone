@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Icon, Button } from "semantic-ui-react";
+import { Menu, Icon, Button, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 // import APIManager from "../managers/APIManager";
@@ -9,15 +9,21 @@ export default class NavBar extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   logout = () => {
-    sessionStorage.clear("credentials")
-    this.props.setAuth()
-  }
+    sessionStorage.clear("credentials");
+    this.props.setAuth();
+  };
 
   render() {
     const { activeItem } = this.state;
 
     return (
       <Menu>
+        <Image
+          className="nav-logo"
+          src="http://www.clipartsuggest.com/images/845/basketball-team-silhouette-clip-art-bQ8xKM-clipart.jpg"
+        />
+
+        <h1 className="title">Squad Spawn</h1>
         <Menu.Item
           name="Home"
           as={Link}
@@ -28,7 +34,6 @@ export default class NavBar extends Component {
           Home
         </Menu.Item>
 
-        <h1 className="title">Squad Spawn</h1>
 
         <Menu.Item
           name="View My Squad"
