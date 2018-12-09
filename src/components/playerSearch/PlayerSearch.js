@@ -29,11 +29,11 @@ export default class PlayerSearch extends Component {
 
         <div className="searchBox">
           <Dropdown
-            button
             className="icon"
+            icon="search"
+            selection
             floating
             labeled
-            icon="search"
             options={this.state.playerNames}
             // onClick=
             search

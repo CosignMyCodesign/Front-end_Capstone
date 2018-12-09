@@ -21,8 +21,8 @@ export default Object.create(null, {
           return players.map(player => {
             return {
               key: player.player.id,
-              text: player.player.firstName,
-              value: player.player.firstName
+              text: `${player.player.firstName} ${player.player.lastName}`,
+              value: `${player.player.firstName} ${player.player.lastName}`
             };
           });
         });
