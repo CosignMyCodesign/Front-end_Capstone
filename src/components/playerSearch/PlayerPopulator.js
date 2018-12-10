@@ -21,19 +21,20 @@ export default class PlayerPopulator extends Component {
   //     this.setState({ players: player[0].player });
   //   });
   // };
-  
 
   render() {
-    console.log(this.props.player)
+    console.log(this.props.player);
     return (
       <div className="populatorContainer">
         <div className="playerSelection">
-          <li>
+          <div className="selectedPlayer">
             {/* will be passing in this.props.etc to get the value of what is clicked in the playersearch component */}
-            {this.props.player} 
+            <h4> {this.props.player} </h4>
             {/* <img alt="headshot" src={this.props.player.officialImageSrc} /> */}
-            <br />
-            <br />
+          </div>
+          <br />
+          <br />
+          <div>
             <Button.Group className="buttonGroup">
               <Button
                 className="button-link"
@@ -52,7 +53,7 @@ export default class PlayerPopulator extends Component {
                 Add to Squad
               </Button>
             </Button.Group>
-          </li>
+          </div>
         </div>
         <Divider />
       </div>

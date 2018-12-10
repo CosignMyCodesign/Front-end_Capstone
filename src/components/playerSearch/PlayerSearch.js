@@ -57,7 +57,7 @@ handleSelection = (e, {name, value}) => {
         </div>
         <Divider />
         {/* import player populator with a conditional that if there is something in state then show the component if not then show nothing/null */}
-        <PlayerPopulator player={this.state.player}/>
+        <PlayerPopulator player={this.state.player} id={this.state.player.key}/>
       </div>
     );
   }
