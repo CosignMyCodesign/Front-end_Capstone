@@ -10,7 +10,16 @@ export default Object.create(null, {
   singlePlayer: {
     value: function(resource, id) {
       return fetch(`${remoteURL}/${resource}?player.id=${id}`).then(e =>
-        e.json()
+      e.json()
+      .then(player => player)
+      );
+    }
+  },
+  singlePlayerByName: {
+    value: function(resource, firstname, lastname) {
+      return fetch(`${remoteURL}/${resource}?player.firstName=${firstname}&_player.lastName=${lastname}`).then(e =>
+      e.json()
+      .then(player => player)
       );
     }
   },
@@ -20,6 +29,7 @@ export default Object.create(null, {
         .then(players => {
           return players.map(player => {
             return {
+              id: player.player.id,
               key: player.player.id,
               text: `${player.player.firstName} ${player.player.lastName}`,
               value: `${player.player.firstName} ${player.player.lastName}`

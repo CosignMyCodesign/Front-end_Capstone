@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import APIManager from "../../managers/APIManager";
+// import APIManager from "../../managers/APIManager";
 import "./PlayerPopulator.css";
 
 export default class PlayerPopulator extends Component {
@@ -23,14 +23,14 @@ export default class PlayerPopulator extends Component {
   // };
 
   render() {
-    console.log(this.props.player);
+    // console.log(this.props.player);
     return (
       <div className="populatorContainer">
         <div className="playerSelection">
           <div className="selectedPlayer">
             {/* will be passing in this.props.etc to get the value of what is clicked in the playersearch component */}
-            <h4> {this.props.player} </h4>
-            {/* <img alt="headshot" src={this.props.player.officialImageSrc} /> */}
+            <h4> {this.props.player.firstName} {this.props.player.lastName} </h4>
+            <img alt="headshot" src={this.props.player.officialImageSrc} />
           </div>
           <br />
           <br />
