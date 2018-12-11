@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Login from "./Login"
-import Home from "../home/Home"
+import Welcome from "../Welcome"
 
 class IsAuth extends Component {
   activeUser() {
@@ -11,7 +11,7 @@ class IsAuth extends Component {
     console.log(this.activeUser())
     return <React.Fragment>
         {this.props.isAuthenticated() ? (
-        <Home activeUser={this.activeUser} {...this.props} />
+        <Welcome activeUser={this.activeUser} {...this.props} />
         ) : (
           <Login {...this.props} />
         )}

@@ -11,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar {...this.props} />
+        {/* <NavBar {...this.props} /> */}
         
         <Header
           className="header"
@@ -30,7 +30,7 @@ export default class Home extends Component {
         {/* <PlayerPopulator/> */}
         <MySquad/>
 
-        <ApplicationViews {...this.props} />
+        {/* <ApplicationViews {...this.props} /> */}
       </React.Fragment>
     );
   }

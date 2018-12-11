@@ -3,9 +3,31 @@ import "./PlayerCard.css"
 
 export default class PlayerCard extends Component {
   render() {
+    const playerSelection = this.props.players.map(m => m.player) || {}
+    // console.log(playerSelection)
+
+    const targetedPlayer =playerSelection.find(a =>  a.id === parseInt(this.props.match.params.playerId, 0)) || {}
+    // console.log(this.props.players[0])
+    // const playerObj = targetedPlayer.player
+    console.log(targetedPlayer.id)
+    // console.log(playerObj)
     return (
       <section>
-        {this.props.players.map(member => {
+        <div className="playerCard" key={targetedPlayer.id}>
+              Name: {targetedPlayer.firstName} {targetedPlayer.lastName}
+              <br />
+              <img alt="player" src={targetedPlayer.officialImageSrc}/>
+              <br />
+              Position: {targetedPlayer.primaryPosition}
+              <br />
+              Age: {targetedPlayer.age}
+              <br />
+              Height: {targetedPlayer.height}
+              <br />
+              Weight: {targetedPlayer.weight}
+              <br />
+            </div>
+        {/* {this.props.player.map(member => {
           // console.log(player)
           return (
             <div className="playerCard" key={member.player.id}>
@@ -23,7 +45,7 @@ export default class PlayerCard extends Component {
               <br />
             </div>
           );
-        })}
+        })} */}
       </section>
     );
   }
