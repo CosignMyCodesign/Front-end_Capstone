@@ -23,7 +23,7 @@ export default class PlayerPopulator extends Component {
       <div className="populatorContainer">
         <div className="playerSelection">
           <div className="selectedPlayer">
-            {/* will be passing in this.props.etc to get the value of what is clicked in the playersearch component */}
+
             <h3>
               {this.props.player.firstName} {this.props.player.lastName}{" "}
             </h3>
