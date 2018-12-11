@@ -5,25 +5,16 @@ import APIManager from "../../managers/APIManager";
 import "./PlayerPopulator.css";
 
 export default class PlayerPopulator extends Component {
-  state = {
-    users: [],
-    players: {},
-    squads: [],
-    users_id: "",
-    player_id: "",
-    message: ""
-  };
+
 
   addSquadPlayer = evt => {
     evt.preventDefault()
     const squadMember = {
-      users_id: "hi",
-      player_id: "hello",
-      message: "whats up"
+      users_id: sessionStorage.getItem("credentials"),
+      player_id: this.props.player.id
       }
-      APIManager.add("squads", squadMember).then(squadMember => {
-        this.setState({ squads: squadMember });
-      });
+      APIManager.add("squads", squadMember)
+      // then i could do a .then and alert that the player has been added to squad
     }
 
     // add: {
@@ -44,10 +35,8 @@ export default class PlayerPopulator extends Component {
   // }
 
   render() {
-    // console.log(this.props.player);
     // need to figure out why the console log below doesnt work
     // console.log(this.props.player.currentTeam.abbreviation)
-    // console.log(this.props.player.firstName)
     return (
       <div className="populatorContainer">
         <div className="playerSelection">

@@ -53,7 +53,7 @@ export default class NavBar extends Component {
         <Menu.Item
           name="View My Squad"
           as={Link}
-          to={`/viewsquad/`}
+          to={`/viewsquad/${sessionStorage.getItem("credentials")}`}
           position="right"
           active={activeItem === "View My Squad"}
           onClick={this.handleItemClick}
