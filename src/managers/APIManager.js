@@ -42,9 +42,14 @@ export default Object.create(null, {
     }
   },
   // added in an operator "_ne" to filter out any players that aren't currently on a team. Also filtered out coaches by checking if there was a jerseyNumber assigned.
-  all: {
+  allPlayers: {
     value: function(resource) {
       return fetch(`${remoteURL}/${resource}?player.currentTeam.abbreviation_ne=null&player.jerseyNumber_ne=null`).then(e => e.json());
+    }
+  },
+  all: {
+    value: function(resource) {
+      return fetch(`${remoteURL}/${resource}`).then(e => e.json())
     }
   },
   delete: {

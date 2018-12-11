@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Header, Icon } from "semantic-ui-react";
-import NavBar from "../nav/NavBar";
-import ApplicationViews from "../ApplicationViews";
+// import NavBar from "../nav/NavBar";
+// import ApplicationViews from "../ApplicationViews";
 import PlayerSearch from "../playerSearch/PlayerSearch"
 // import PlayerPopulator from "../playerSearch/PlayerPopulator"
-import MySquad from "../squad/MySquad"
+// import MySquad from "../squad/MySquad"
 import "./Home.css";
 
 export default class Home extends Component {
@@ -28,7 +28,7 @@ export default class Home extends Component {
         </Header>
         <PlayerSearch/>
         {/* <PlayerPopulator/> */}
-        <MySquad/>
+        {/* <MySquad/> */}
 
         {/* <ApplicationViews {...this.props} /> */}
       </React.Fragment>

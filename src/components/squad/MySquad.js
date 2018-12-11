@@ -1,13 +1,21 @@
 import React, { Component } from "react";
 import { Header, Container, Grid, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import SquadCard from "./SquadCard"
+import "./Squad.css"
 
 // Im going to need to map over the grid to put each grid column in after you "add to squad". I should only have one column hard coded below
 export default class MySquad extends Component {
   render() {
+    // const playerSelection = this.props.players.map(m => m.player) || {}
+    // // console.log(playerSelection)
+
+    // const targetedPlayer =playerSelection.find(a =>  a.id === parseInt(this.props.match.params.playerId, 0)) || {}
+    
     return (
-      <Container>
-        <div className="squadContainer">
+      <Container className="squadContainer">
+        <SquadCard/>
+        {/* <div className="squadContainer">
           <div className="squadHeader">
             <Header size="huge" textAlign="center" block={true} color="orange">
               My Squad
@@ -154,7 +162,7 @@ export default class MySquad extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </div>
+        </div> */}
       </Container>
     );
   }

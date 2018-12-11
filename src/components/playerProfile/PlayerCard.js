@@ -9,7 +9,7 @@ export default class PlayerCard extends Component {
     const targetedPlayer =playerSelection.find(a =>  a.id === parseInt(this.props.match.params.playerId, 0)) || {}
     // console.log(this.props.players[0])
     // const playerObj = targetedPlayer.player
-    console.log(targetedPlayer.id)
+    // console.log(targetedPlayer.id)
     // console.log(playerObj)
     return (
       <section>

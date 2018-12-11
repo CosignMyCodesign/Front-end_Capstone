@@ -1,10 +1,25 @@
 import React, { Component } from "react";
 import { Menu, Icon, Button, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+// import APIManager from "../../managers/APIManager"
 import "./NavBar.css";
 // import APIManager from "../managers/APIManager";
 export default class NavBar extends Component {
-  state = {};
+  state = {
+    users: []
+  };
+
+
+  // componentDidMount() {
+  //   this.getAllUsers()
+  // }
+  
+  // getAllUsers = () => {
+  //   APIManager.all("users").then(users => {
+  //     console.log(users)
+  //     this.setState({ users: users });
+  //   });
+  // }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -38,7 +53,7 @@ export default class NavBar extends Component {
         <Menu.Item
           name="View My Squad"
           as={Link}
-          to="/viewsquad"
+          to={`/viewsquad/`}
           position="right"
           active={activeItem === "View My Squad"}
           onClick={this.handleItemClick}
