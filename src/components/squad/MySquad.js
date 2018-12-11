@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Header, Container, Grid, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+// Im going to need to map over the grid to put each grid column in after you "add to squad". I should only have one column hard coded below
 export default class MySquad extends Component {
   render() {
     return (
@@ -23,7 +24,7 @@ export default class MySquad extends Component {
                     className="button-link"
                     color="blue"
                     as={Link}
-                    to="/PlayerProfile"
+                    to={"/playerprofile"}
                   >
                     View Profile
                   </Button>

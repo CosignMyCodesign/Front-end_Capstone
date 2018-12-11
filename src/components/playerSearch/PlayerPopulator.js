@@ -19,11 +19,12 @@ export default class PlayerPopulator extends Component {
     // console.log(this.props.player);
     // need to figure out why the console log below doesnt work
     // console.log(this.props.player.currentTeam.abbreviation)
+    console.log(this.props.player.firstName)
     return (
       <div className="populatorContainer">
         <div className="playerSelection">
           <div className="selectedPlayer">
-
+            
             <h3>
               {this.props.player.firstName} {this.props.player.lastName}{" "}
             </h3>
@@ -39,7 +40,7 @@ export default class PlayerPopulator extends Component {
                 className="button-link"
                 color="blue"
                 as={Link}
-                to="/PlayerProfile"
+                to={`/playerprofile/${this.props.player.id}`}
               >
                 View Profile
               </Button>

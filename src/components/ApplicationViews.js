@@ -1,7 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import APIManager from "../managers/APIManager";
-// import Home from "./home/Home"
+import PlayerCard from "../components/playerProfile/PlayerCard";
+import Home from "./home/Home"
 // import PlayerCard from "./playerProfile/PlayerCard"
 
 class ApplicationViews extends Component {
@@ -29,17 +30,21 @@ class ApplicationViews extends Component {
 
   render() {
     // if (this.state.initialized) {
+      console.log(this.state.players)
     return (
       <React.Fragment>
-        <div>{/* <Home/> */}</div>
-        <div>{/* <PlayerCard players={this.state.players}/> */}</div>
-        {/* <Route
-          exact
-          path="/home"
+        <Route
+          exact path="/"
           render={props => {
-            return <Home />;
+            return <Home players={this.state.players} {...props} />;
           }}
-        /> */}
+        />
+        <Route
+          path="/playerprofile/:playerId(\d+)"
+          render={props => {
+            return <PlayerCard players={this.state.players} {...props} />;
+          }}
+        />
       </React.Fragment>
     );
   }
