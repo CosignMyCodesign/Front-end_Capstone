@@ -25,17 +25,17 @@ export default class PlayerSearch extends Component {
 
   //  First thing I did was add an ID into each option in the APIManager.getPlayerNames then we were able to get back the entire object of a single player. Then we could set the state of a single player so that I could use dot notation and get whatever data I needed.
   handleSelection = (e, {name, value}) => {
-
+// This eliminates the bug where if you tried to click outside of the dropdown selection options it would cause an error
     if(e.target.className === "search"){
-
+// Previously, if you clicked on the text (player name) of the option in the dropdown menu you would get an error because it was in a span tag (inside the div) with a className of text, so it wasn't letting you target the actual div where the target id was assigned. I made a new API method that would fetch by the player's first and last name (which was the text value in the span tag)
     } else if(e.target.className.includes("text")){
-
+      console.log(e.target.innerText)
       let fullName = e.target.innerText;
       let firstName = fullName.split(" ")[0]
       let lastName = fullName.split(" ")[1]
       APIManager.singlePlayerByName("players", firstName, lastName)
       .then(player => {
-        // console.log(player[0].player)
+        // this sets the state of player with the value being the singular player object that was targeted in the dropdown option selection
         this.setState({player: player[0].player})
       })
     } else {
@@ -46,9 +46,9 @@ export default class PlayerSearch extends Component {
       })
     }
   }
-
+  
   render() {
-    // console.log(this.state.playerNames)
+    console.log(this.state.player)
     return (
       <div className="searchContainer">
         <div className="searchHeader">

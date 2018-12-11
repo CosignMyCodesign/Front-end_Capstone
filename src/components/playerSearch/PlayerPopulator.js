@@ -14,22 +14,21 @@ export default class PlayerPopulator extends Component {
     // Invokes function to get all of the players
     // this.listPlayer();
   }
-  // WONT need a function on this page after I get the search functionality to work on the playerSearch component
-  // listPlayer = () => {
-  //   APIManager.singlePlayer("players", 9157).then(player => {
-  //     console.log(player[0].player);
-  //     this.setState({ players: player[0].player });
-  //   });
-  // };
 
   render() {
     // console.log(this.props.player);
+    // need to figure out why the console log below doesnt work
+    // console.log(this.props.player.currentTeam.abbreviation)
     return (
       <div className="populatorContainer">
         <div className="playerSelection">
           <div className="selectedPlayer">
             {/* will be passing in this.props.etc to get the value of what is clicked in the playersearch component */}
-            <h4> {this.props.player.firstName} {this.props.player.lastName} </h4>
+            <h3>
+              {this.props.player.firstName} {this.props.player.lastName}{" "}
+            </h3>
+            {/* <p>{this.props.player.currentTeam.abbreviation}</p> */}
+
             <img alt="headshot" src={this.props.player.officialImageSrc} />
           </div>
           <br />

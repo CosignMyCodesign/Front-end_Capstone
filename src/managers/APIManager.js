@@ -7,6 +7,7 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}/${id}`).then(e => e.json());
     }
   },
+  //(this is used in PlayerSearch.js)
   singlePlayer: {
     value: function(resource, id) {
       return fetch(`${remoteURL}/${resource}?player.id=${id}`).then(e =>
@@ -15,6 +16,7 @@ export default Object.create(null, {
       );
     }
   },
+  // Had to make this because of a target issue in the dropdown selection. (this is used in PlayerSearch.js)
   singlePlayerByName: {
     value: function(resource, firstname, lastname) {
       return fetch(`${remoteURL}/${resource}?player.firstName=${firstname}&_player.lastName=${lastname}`).then(e =>
@@ -23,6 +25,7 @@ export default Object.create(null, {
       );
     }
   },
+  // This is a method to get all of the player names for the dropdown options. I also added an id to be able to target that specific option by it's id and return the entire player object. This way I can get whatever data is needed from the singular player object(this is used in PlayerSearch.js)
   getPlayerNames: {
     value: function(resource) {
      return this.all(resource)
@@ -38,9 +41,10 @@ export default Object.create(null, {
         });
     }
   },
+  // added in an operator "_ne" to filter out any players that aren't currently on a team
   all: {
     value: function(resource) {
-      return fetch(`${remoteURL}/${resource}`).then(e => e.json());
+      return fetch(`${remoteURL}/${resource}?player.currentTeam.abbreviation_ne=null`).then(e => e.json());
     }
   },
   delete: {
