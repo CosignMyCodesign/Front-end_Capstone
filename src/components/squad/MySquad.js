@@ -13,17 +13,22 @@ export default class MySquad extends Component {
 
   componentDidMount() {
     console.log(APIManager)
-    APIManager.allSquads("squads", sessionStorage.getItem("credentials")).then(squads => {
+    APIManager.allSquads("squads", sessionStorage.getItem("credentials"))
+    .then(squads => {
       this.setState({ squads: squads });
     });
   }
 
+  // Close to working properly. The player is removed from squad, but you get a bug and have to refreh the page before you can see the squad properly with that player removed.
   deleteSquadPlayer = id => {
-    APIManager.delete("squads", id);
+    APIManager.delete("squads", id)
+    .then(squads => {
+      this.setState({ squads: squads});
+    });
   };
 
   render() {
-    console.log(this.state.squads)
+    // console.log(this.state.squads)
     return (
       <Container className="squadContainer">
         {this.state.squads.map(squad => {

@@ -54,7 +54,7 @@ export default Object.create(null, {
   },
   allSquads: {
     value: function(resource, id) {
-      return fetch(`${remoteURL}/${resource}?_expand=players&user_id=${id}`).then(e => e.json())
+      return fetch(`${remoteURL}/${resource}?_expand=players&users_id=${id}`).then(e => e.json())
     }
   },
   delete: {

@@ -47,9 +47,9 @@ export default class PlayerSearch extends Component {
   };
 
   render() {
-    console.log(this.state.player);
+    // console.log(this.state.player);
     // Set up a conditional render. PlayerPopulator wont render unless a player is selected from the dropdown
-    if (this.state.player.age) {
+    if (this.state.player.firstName) {
       return (
         <div className="searchContainer">
           <div className="searchHeader">

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import APIManager from "../../managers/APIManager";
+// import APIManager from "../../managers/APIManager";
 
 export default class SquadCard extends Component {
  
