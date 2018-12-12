@@ -1,30 +1,32 @@
 import React, { Component } from "react";
 import { Button, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-// import APIManager from "../../managers/APIManager";
+import APIManager from "../../managers/APIManager";
 import "./PlayerPopulator.css";
 
 export default class PlayerPopulator extends Component {
-  state = {
-    users: [],
-    players: {}
-  };
 
-  componentDidMount() {
-    // Invokes function to get all of the players
-    // this.listPlayer();
-  }
+
+  addSquadPlayer = evt => {
+    evt.preventDefault()
+    const squadMember = {
+      users_id: parseInt(sessionStorage.getItem("credentials")),
+      player_id: this.props.player.id
+      }
+      APIManager.add("squads", squadMember)
+      // then i could do a .then and alert that the player has been added to squad
+    }
+
+  // componentDidMount() {
+  // }
 
   render() {
-    // console.log(this.props.player);
     // need to figure out why the console log below doesnt work
     // console.log(this.props.player.currentTeam.abbreviation)
-    console.log(this.props.player.firstName)
     return (
       <div className="populatorContainer">
         <div className="playerSelection">
           <div className="selectedPlayer">
-            
             <h3>
               {this.props.player.firstName} {this.props.player.lastName}{" "}
             </h3>
@@ -48,7 +50,7 @@ export default class PlayerPopulator extends Component {
               <Button
                 className="button-add"
                 color="green"
-                // onClick=
+                onClick={this.addSquadPlayer}
               >
                 Add to Squad
               </Button>

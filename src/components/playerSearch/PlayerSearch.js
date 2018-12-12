@@ -28,7 +28,7 @@ export default class PlayerSearch extends Component {
     if (e.target.className === "search") {
       // Previously, if you clicked on the text (player name) of the option in the dropdown menu you would get an error because it was in a span tag (inside the div) with a className of text, so it wasn't letting you target the actual div where the target id was assigned. I made a new API method that would fetch by the player's first and last name (which was the text value in the span tag)
     } else if (e.target.className.includes("text")) {
-      console.log(e.target.innerText);
+      // console.log(e.target.innerText);
       let fullName = e.target.innerText;
       let firstName = fullName.split(" ")[0];
       let lastName = fullName.split(" ")[1];
@@ -47,7 +47,7 @@ export default class PlayerSearch extends Component {
   };
 
   render() {
-    console.log(this.state.player);
+    // console.log(this.state.player);
     // Set up a conditional render. PlayerPopulator wont render unless a player is selected from the dropdown
     if (this.state.player.age) {
       return (

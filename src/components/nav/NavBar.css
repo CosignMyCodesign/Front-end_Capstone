@@ -1,8 +1,14 @@
+/* font-family: 'Bangers', cursive;
+font-family: 'Audiowide', cursive;
+font-family: 'Bungee Inline', cursive; */
+
 .title {
   text-align: center;
-  width: 100%
+  width: 100%;
+  font-family: 'Bungee Inline', cursive;
 }
 
 .nav-logo {
   height: 70px
 }
+
