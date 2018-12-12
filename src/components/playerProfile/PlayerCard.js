@@ -46,7 +46,7 @@ export default class PlayerCard extends Component {
               <Button
                 type="submit"
                 color="green"
-                floated="left"
+                floated="right"
                 // onClick=
               >
                 Submit
@@ -54,35 +54,24 @@ export default class PlayerCard extends Component {
               <Button
                 type="submit"
                 color="blue"
-                floated="right"
+                floated="left"
                 as={Link}
                 to="/"
-                // onClick=
               >
-                Back
+                Search for Another Player
+              </Button>
+              <Button
+                type="submit"
+                color="orange"
+                floated="left"
+                as={Link}
+                to={`/viewsquad/${sessionStorage.getItem("credentials")}`}
+              >
+                View My Squad
               </Button>
             </div>
           </Form>
         </div>
-        {/* {this.props.player.map(member => {
-          // console.log(player)
-          return (
-            <div className="playerCard" key={member.player.id}>
-              Name: {member.player.firstName} {member.player.lastName}
-              <br />
-              <img alt="player" src={member.player.officialImageSrc}/>
-              <br />
-              Position: {member.player.primaryPosition}
-              <br />
-              Age: {member.player.age}
-              <br />
-              Height: {member.player.height}
-              <br />
-              Weight: {member.player.weight}
-              <br />
-            </div>
-          );
-        })} */}
       </section>
     );
   }

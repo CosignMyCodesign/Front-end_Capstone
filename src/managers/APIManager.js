@@ -61,6 +61,15 @@ export default Object.create(null, {
         .then(() => this.all(resource));
     }
   },
+  deleteFromSquad: {
+    value: function(resource, id) {
+      return fetch(`${remoteURL}/${resource}/${id}`, {
+        method: "DELETE"
+      })
+        .then(e => e.json())
+        .then(() => this.all(resource));
+    }
+  },
   add: {
     value: function(resource, newObject) {
       return fetch(`${remoteURL}/${resource}`, {

@@ -1,3 +1,7 @@
 .squadContainer {
-  display: flex
+  display: flex;
+}
+
+.squadPlayer {
+  /* display: flex; */
 }

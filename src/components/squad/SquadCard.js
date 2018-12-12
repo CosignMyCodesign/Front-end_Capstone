@@ -6,26 +6,21 @@ import { Link } from "react-router-dom";
 export default class SquadCard extends Component {
   
   render() {
-    // console.log(this.props.squadArr[0])
-    // console.log(this.props.player)
+   
     return (
       <div className="squadPlayer">
         <h3>
-         {this.props.player.player.firstName}
-        {/* {targetedPlayer.firstName} {targetedPlayer.lastName} */}
+         {this.props.player.player.firstName} {this.props.player.player.lastName}
         </h3>
-        {/* <p>{this.props.player.currentTeam.abbreviation}</p> */}
 
         <Image alt="headshot" src={this.props.player.player.officialImageSrc} />
-        {/* <Image alt="headshot" src="https://cdn4.iconfinder.com/data/icons/basketball-3/500/Basketball_11-512.png" /> */}
-
+        <br />
         <Button.Group className="buttonGroup" size="mini">
           <Button
             className="button-link"
             color="blue"
             as={Link}
-            to={'/playerprofile'}
-            // to={`/playerprofile/${this.props.player.id}`}
+            to={`/playerprofile/${this.props.player.player.id}`}
           >
             View Profile
           </Button>
