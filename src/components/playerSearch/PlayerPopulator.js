@@ -11,7 +11,7 @@ export default class PlayerPopulator extends Component {
     evt.preventDefault()
     const squadMember = {
       users_id: parseInt(sessionStorage.getItem("credentials")),
-      player_id: this.props.player.id
+      playerId: this.props.player.id
       }
       APIManager.add("squads", squadMember)
       // then i could do a .then and alert that the player has been added to squad

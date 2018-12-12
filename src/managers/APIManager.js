@@ -10,7 +10,7 @@ export default Object.create(null, {
   //(this is used in PlayerSearch.js)
   singlePlayer: {
     value: function(resource, id) {
-      return fetch(`${remoteURL}/${resource}?player.id=${id}`).then(e =>
+      return fetch(`${remoteURL}/${resource}/${id}`).then(e =>
       e.json()
       .then(player => player)
       );
@@ -19,7 +19,7 @@ export default Object.create(null, {
   // Had to make this because of a target issue in the dropdown selection. (this is used in PlayerSearch.js)
   singlePlayerByName: {
     value: function(resource, firstname, lastname) {
-      return fetch(`${remoteURL}/${resource}?player.firstName=${firstname}&_player.lastName=${lastname}`).then(e =>
+      return fetch(`${remoteURL}/${resource}?firstName=${firstname}&lastName=${lastname}`).then(e =>
       e.json()
       .then(player => player)
       );
@@ -32,10 +32,10 @@ export default Object.create(null, {
         .then(players => {
           return players.map(player => {
             return {
-              id: player.player.id,
-              key: player.player.id,
-              text: `${player.player.firstName} ${player.player.lastName}`,
-              value: `${player.player.firstName} ${player.player.lastName}`
+              id: player.id,
+              key: player.id,
+              text: `${player.firstName} ${player.lastName}`,
+              value: `${player.firstName} ${player.lastName}`
             };
           });
         });
@@ -44,7 +44,7 @@ export default Object.create(null, {
   // added in an operator "_ne" to filter out any players that aren't currently on a team. Also filtered out coaches by checking if there was a jerseyNumber assigned.
   allPlayers: {
     value: function(resource) {
-      return fetch(`${remoteURL}/${resource}?player.currentTeam.abbreviation_ne=null&player.jerseyNumber_ne=null`).then(e => e.json());
+      return fetch(`${remoteURL}/${resource}?currentTeam.abbreviation_ne=null&jerseyNumber_ne=null`).then(e => e.json());
     }
   },
   all: {
@@ -52,16 +52,12 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}`).then(e => e.json())
     }
   },
-  delete: {
+  allSquads: {
     value: function(resource, id) {
-      return fetch(`${remoteURL}/${resource}/${id}`, {
-        method: "DELETE"
-      })
-        .then(e => e.json())
-        .then(() => this.all(resource));
+      return fetch(`${remoteURL}/${resource}?_expand=players&user_id=${id}`).then(e => e.json())
     }
   },
-  deleteFromSquad: {
+  delete: {
     value: function(resource, id) {
       return fetch(`${remoteURL}/${resource}/${id}`, {
         method: "DELETE"
@@ -132,49 +128,3 @@ export default Object.create(null, {
   }
 });
 
-// My way handling the APIManager utilizing
-// class APIManager {
-//     constructor(route) {
-//         this.route = route
-//     }
-
-//   get(id) {
-//    return fetch(`${remoteURL}/${this.route}/${id}`).then(e => e.json())
-//   }
-
-//   getAll() {
-//     return fetch(`${remoteURL}/${this.route}`).then(data => data.json())
-//   }
-
-//   delete(id) {
-//     return fetch(`${remoteURL}/${this.route}/${id}`, {
-//         method: "DELETE"
-//       })
-//         .then(e => e.json())
-//         .then(() => fetch(`${remoteURL}/${this.route}`))
-//         .then(e => e.json())
-//   }
-
-//   patch(payload, url) {
-//     return fetch(`${url}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(payload)
-//     }).then(data => data.json())
-//   }
-
-//   post(payload) {
-//     return fetch(`${remoteURL}/${this.route}/`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(payload)
-//     }).then(data => data.json())
-//   }
-
-// }
-
-// export default new APIManager("players")

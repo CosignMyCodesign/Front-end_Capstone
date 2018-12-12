@@ -35,19 +35,19 @@ export default class PlayerSearch extends Component {
       APIManager.singlePlayerByName("players", firstName, lastName).then(
         player => {
           // this sets the state of player with the value being the singular player object that was targeted in the dropdown option selection
-          this.setState({ player: player[0].player });
+          this.setState({ player: player[0] });
         }
       );
     } else {
       APIManager.singlePlayer("players", Number(e.target.id)).then(player => {
-        // console.log(player[0].player)
-        this.setState({ player: player[0].player });
+        console.log(player)
+        this.setState({ player: player});
       });
     }
   };
 
   render() {
-    // console.log(this.state.player);
+    console.log(this.state.player);
     // Set up a conditional render. PlayerPopulator wont render unless a player is selected from the dropdown
     if (this.state.player.age) {
       return (

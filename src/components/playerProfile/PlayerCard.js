@@ -5,7 +5,7 @@ import "./PlayerCard.css";
 
 export default class PlayerCard extends Component {
   render() {
-    const playerSelection = this.props.players.map(m => m.player) || {};
+    const playerSelection = this.props.players.map(m => m) || {};
     // console.log(playerSelection)
 
     const targetedPlayer =
@@ -22,7 +22,7 @@ export default class PlayerCard extends Component {
           <br />
           <img alt="player" src={targetedPlayer.officialImageSrc} />
           <br />
-          Team: {targetedPlayer.currentTeam.abbreviation}
+          {/* Team: {targetedPlayer.currentTeam.abbreviation} */}
           <br />
           Position: {targetedPlayer.primaryPosition}
           <br />
@@ -34,7 +34,7 @@ export default class PlayerCard extends Component {
           <br />
           College: {targetedPlayer.college}
           <br />
-          Born in: {targetedPlayer.birthCity}, {targetedPlayer.birthCountry}
+          Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
         </div>
         <div className="form">
           <Form>
@@ -49,7 +49,7 @@ export default class PlayerCard extends Component {
                 floated="right"
                 // onClick=
               >
-                Submit
+                Save Message
               </Button>
               <Button
                 type="submit"

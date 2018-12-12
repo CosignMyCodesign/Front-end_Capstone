@@ -12,28 +12,29 @@ export default class MySquad extends Component {
   };
 
   componentDidMount() {
-    let squadArr = []
-    APIManager.all("squads").then(squads => {
-      this.setState({ squads: squads }, () => {
-        this.state.squads.forEach(player => {
-          console.log(player.id)
-          APIManager.singlePlayer("players", player.player_id)
-          .then((member) => squadArr.push(member[0]))
-        })
-      });
-      this.setState({players: squadArr})
-      // console.log(this.state.players)
+    console.log(APIManager)
+    APIManager.allSquads("squads", sessionStorage.getItem("credentials")).then(squads => {
+      this.setState({ squads: squads });
     });
-    // console.log(squadArr)
   }
 
-  render() {
+  deleteSquadPlayer = id => {
+    APIManager.delete("squads", id);
+  };
 
+  render() {
+    console.log(this.state.squads)
     return (
       <Container className="squadContainer">
-      {this.state.players.map(player => {
-        return(<SquadCard squads={this.state.squads} players={this.state.players} player={player} key={player.player.id} />)
-      })
+        {this.state.squads.map(squad => {
+          return (
+            <SquadCard
+              squad={squad}
+              key={squad.id}
+              deleteSquadPlayer={() => this.deleteSquadPlayer(squad.id)}
+            />
+          );
+        })
         // <SquadCard squads={this.state.squads} players={this.state.players}/>
         /* <div className="squadContainer">
           <div className="squadHeader">
@@ -182,7 +183,8 @@ export default class MySquad extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </div> */}
+        </div> */
+        }
       </Container>
     );
   }
