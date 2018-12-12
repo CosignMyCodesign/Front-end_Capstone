@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "./PlayerCard.css";
 
 export default class PlayerCard extends Component {
@@ -15,9 +16,13 @@ export default class PlayerCard extends Component {
     return (
       <section>
         <div className="playerCard" key={targetedPlayer.id}>
-          Name: {targetedPlayer.firstName} {targetedPlayer.lastName}
+          <h3>
+            {targetedPlayer.firstName} {targetedPlayer.lastName}
+          </h3>
           <br />
           <img alt="player" src={targetedPlayer.officialImageSrc} />
+          <br />
+          Team: {targetedPlayer.currentTeam.abbreviation}
           <br />
           Position: {targetedPlayer.primaryPosition}
           <br />
@@ -27,18 +32,36 @@ export default class PlayerCard extends Component {
           <br />
           Weight: {targetedPlayer.weight}
           <br />
+          College: {targetedPlayer.college}
+          <br />
+          Born in: {targetedPlayer.birthCity}, {targetedPlayer.birthCountry}
+        </div>
+        <div className="form">
           <Form>
             <Form.Field>
-              <label>User Input</label>
+              <label>Save a message about this player</label>
               <input />
             </Form.Field>
-            <Button 
-            type="submit" 
-            color="green"
-            // onClick=
-            >
-              Submit
-            </Button>
+            <div className="buttonGroup">
+              <Button
+                type="submit"
+                color="green"
+                floated="left"
+                // onClick=
+              >
+                Submit
+              </Button>
+              <Button
+                type="submit"
+                color="blue"
+                floated="right"
+                as={Link}
+                to="/"
+                // onClick=
+              >
+                Back
+              </Button>
+            </div>
           </Form>
         </div>
         {/* {this.props.player.map(member => {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Icon, Button, Image } from "semantic-ui-react";
+import { Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 // import APIManager from "../../managers/APIManager"
 import "./NavBar.css";

@@ -28,7 +28,7 @@ export default Object.create(null, {
   // This is a method to get all of the player names for the dropdown options. I also added an id to be able to target that specific option by it's id and return the entire player object. This way I can get whatever data is needed from the singular player object(this is used in PlayerSearch.js)
   getPlayerNames: {
     value: function(resource) {
-     return this.all(resource)
+     return this.allPlayers(resource)
         .then(players => {
           return players.map(player => {
             return {

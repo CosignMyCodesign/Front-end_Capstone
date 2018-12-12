@@ -10,26 +10,12 @@ export default class PlayerPopulator extends Component {
   addSquadPlayer = evt => {
     evt.preventDefault()
     const squadMember = {
-      users_id: sessionStorage.getItem("credentials"),
+      users_id: parseInt(sessionStorage.getItem("credentials")),
       player_id: this.props.player.id
       }
       APIManager.add("squads", squadMember)
       // then i could do a .then and alert that the player has been added to squad
     }
-
-    // add: {
-    //   value: function(resource, newObject) {
-    //     return fetch(`${remoteURL}/${resource}`, {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify(newObject)
-    //     }).then(e => e.json());
-    //     // Had to comment this out because it was causing an issue when registering a new user, the value (which should be the userID) was coming back as NaN because it was bringing back all of the users in the database.
-    //     // .then(() => this.all(resource))
-    //   }
-    // },
 
   // componentDidMount() {
   // }

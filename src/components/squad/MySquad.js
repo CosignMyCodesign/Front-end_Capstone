@@ -1,21 +1,46 @@
 import React, { Component } from "react";
-import { Header, Container, Grid, Image, Button } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import SquadCard from "./SquadCard"
-import "./Squad.css"
+import { Container } from "semantic-ui-react";
+// import { Link } from "react-router-dom";
+import SquadCard from "./SquadCard";
+import APIManager from "../../managers/APIManager";
+import "./Squad.css";
 
 // Im going to need to map over the grid to put each grid column in after you "add to squad". I should only have one column hard coded below
 export default class MySquad extends Component {
+  state = {
+    squads: [],
+    players: []
+  };
+
+  componentDidMount() {
+    let squadArr = []
+    APIManager.all("squads").then(squads => {
+      this.setState({ squads: squads }, () => {
+        this.state.squads.forEach(player => {
+          console.log(player.id)
+          APIManager.singlePlayer("players", player.player_id)
+          .then((member) => squadArr.push(member[0]))
+        })
+      });
+      this.setState({players: squadArr})
+      // console.log(this.state.players)
+    });
+    // console.log(squadArr)
+  }
+
   render() {
     // const playerSelection = this.props.players.map(m => m.player) || {}
     // // console.log(playerSelection)
 
     // const targetedPlayer =playerSelection.find(a =>  a.id === parseInt(this.props.match.params.playerId, 0)) || {}
-    
+    // console.log(this.props.players)
     return (
       <Container className="squadContainer">
-        <SquadCard/>
-        {/* <div className="squadContainer">
+      {this.state.players.map(player => {
+        return(<SquadCard squads={this.state.squads} players={this.state.players} player={player} key={player.player.id} />)
+      })
+        // <SquadCard squads={this.state.squads} players={this.state.players}/>
+        /* <div className="squadContainer">
           <div className="squadHeader">
             <Header size="huge" textAlign="center" block={true} color="orange">
               My Squad
