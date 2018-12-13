@@ -39,6 +39,11 @@
       "username": "Hannah",
       "password": "bubba",
       "id": 8
+    },
+    {
+      "username": "thisisatest",
+      "password": "321",
+      "id": 9
     }
   ],
   "squads": [
@@ -64,19 +69,29 @@
       "id": 4
     },
     {
-      "users_id": 1,
-      "playersId": 9212,
+      "users_id": 2,
+      "playersId": 9466,
       "id": 5
     },
     {
       "users_id": 2,
-      "playerId": 9466,
+      "playersId": 9299,
       "id": 6
     },
     {
-      "users_id": 2,
-      "playerId": 9299,
-      "id": 7
+      "users_id": 1,
+      "playersId": 9250,
+      "id": 9
+    },
+    {
+      "users_id": 1,
+      "playersId": 9218,
+      "id": 10
+    },
+    {
+      "users_id": 1,
+      "playersId": 9158,
+      "id": 11
     }
   ],
   "players": [

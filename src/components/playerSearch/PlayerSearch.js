@@ -4,7 +4,7 @@ import APIManager from "../../managers/APIManager";
 import PlayerPopulator from "./PlayerPopulator";
 import "./PlayerSearch.css";
 
-// This is just an exmple from Semantic docs of how to populate your searches using the "options" attribute in the Dropdown below. I think I will need to map over the players' names and add them to the options
+// This is just an example from Semantic docs of how to populate your searches using the "options" attribute in the Dropdown below. I think I will need to map over the players' names and add them to the options
 // import { languageOptions } from '../common'
 // languageOptions = [ { key: 'Arabic', text: 'Arabic', value: 'Arabic' }, ...  ]
 

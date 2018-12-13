@@ -57,13 +57,19 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}?_expand=players&users_id=${id}`).then(e => e.json())
     }
   },
+  checkSquads: {
+    value: function(resource, playerId, id) {
+      return fetch(`${remoteURL}/${resource}?playersId=${playerId}&users_id=${id}`).then(e => e.json())
+      .then(player => player)
+    }
+  },
   delete: {
     value: function(resource, id) {
       return fetch(`${remoteURL}/${resource}/${id}`, {
         method: "DELETE"
       })
         .then(e => e.json())
-        .then(() => this.all(resource));
+        .then(() => this.allSquads(resource, sessionStorage.getItem("credentials")));
     }
   },
   add: {
@@ -74,7 +80,7 @@ export default Object.create(null, {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(newObject)
-      }).then(e => e.json());
+      }).then(e => e.json())
       // Had to comment this out because it was causing an issue when registering a new user, the value (which should be the userID) was coming back as NaN because it was bringing back all of the users in the database.
       // .then(() => this.all(resource))
     }

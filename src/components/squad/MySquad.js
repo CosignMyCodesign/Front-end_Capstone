@@ -21,8 +21,9 @@ export default class MySquad extends Component {
 
   // Close to working properly. The player is removed from squad, but you get a bug and have to refreh the page before you can see the squad properly with that player removed.
   deleteSquadPlayer = id => {
-    APIManager.delete("squads", id)
+    return APIManager.delete("squads", id)
     .then(squads => {
+      console.log(squads)
       this.setState({ squads: squads});
     });
   };
