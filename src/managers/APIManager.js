@@ -60,7 +60,7 @@ export default Object.create(null, {
   checkSquads: {
     value: function(resource, playerId, id) {
       return fetch(`${remoteURL}/${resource}?playersId=${playerId}&users_id=${id}`).then(e => e.json())
-      .then(player => player)
+      // .then(player => player)
     }
   },
   delete: {

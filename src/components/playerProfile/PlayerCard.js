@@ -5,6 +5,29 @@ import APIManager from "../../managers/APIManager";
 import "./PlayerCard.css";
 
 export default class PlayerCard extends Component {
+  state = {
+    squads: false
+  }
+
+  componentDidMount() {
+    const playerSelection = this.props.players.map(m => m) || {};
+    // console.log(playerSelection)
+
+    const targetedPlayer =
+      playerSelection.find(
+        a => a.id === parseInt(this.props.match.params.playerId, 0)
+      ) || {};
+
+    APIManager.checkSquads(
+      "squads",
+      targetedPlayer.id,
+      sessionStorage.getItem("credentials")
+    ).then(squads => {
+      if(squads.length !== 0) {
+        this.setState({squads: true})
+      }
+    })
+  }
   render() {
     const playerSelection = this.props.players.map(m => m) || {};
     // console.log(playerSelection)
@@ -17,11 +40,7 @@ export default class PlayerCard extends Component {
     // console.log(targetedPlayer.id)
 
     if (
-      APIManager.checkSquads(
-        "squads",
-        targetedPlayer.id,
-        sessionStorage.getItem("credentials")
-      ) !== "undefined"
+     this.state.squads === true
     ) {
       return (
         <section>
