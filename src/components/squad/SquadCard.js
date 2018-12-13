@@ -4,23 +4,26 @@ import { Link } from "react-router-dom";
 // import APIManager from "../../managers/APIManager";
 
 export default class SquadCard extends Component {
-  
+ 
+ 
+
   render() {
    
     return (
       <div className="squadPlayer">
         <h3>
-         {this.props.player.player.firstName} {this.props.player.player.lastName}
+         {this.props.squad.players.firstName} {this.props.squad.players.lastName}
         </h3>
 
-        <Image alt="headshot" src={this.props.player.player.officialImageSrc} />
+        <Image alt="headshot" src={this.props.squad.players.officialImageSrc} />
         <br />
         <Button.Group className="buttonGroup" size="mini">
           <Button
             className="button-link"
             color="blue"
             as={Link}
-            to={`/playerprofile/${this.props.player.player.id}`}
+            // to='playerprofile'
+            to={`/playerprofile/${this.props.squad.players.id}`}
           >
             View Profile
           </Button>
@@ -29,7 +32,7 @@ export default class SquadCard extends Component {
             className="button-remove"
             size="tiny"
             color="red"
-            // onClick=
+            onClick={this.props.deleteSquadPlayer}
           >
             Remove from Squad
           </Button>

@@ -4,7 +4,7 @@ import APIManager from "../../managers/APIManager";
 import PlayerPopulator from "./PlayerPopulator";
 import "./PlayerSearch.css";
 
-// This is just an exmple from Semantic docs of how to populate your searches using the "options" attribute in the Dropdown below. I think I will need to map over the players' names and add them to the options
+// This is just an example from Semantic docs of how to populate your searches using the "options" attribute in the Dropdown below. I think I will need to map over the players' names and add them to the options
 // import { languageOptions } from '../common'
 // languageOptions = [ { key: 'Arabic', text: 'Arabic', value: 'Arabic' }, ...  ]
 
@@ -35,13 +35,13 @@ export default class PlayerSearch extends Component {
       APIManager.singlePlayerByName("players", firstName, lastName).then(
         player => {
           // this sets the state of player with the value being the singular player object that was targeted in the dropdown option selection
-          this.setState({ player: player[0].player });
+          this.setState({ player: player[0] });
         }
       );
     } else {
       APIManager.singlePlayer("players", Number(e.target.id)).then(player => {
-        // console.log(player[0].player)
-        this.setState({ player: player[0].player });
+        console.log(player)
+        this.setState({ player: player});
       });
     }
   };
@@ -49,7 +49,7 @@ export default class PlayerSearch extends Component {
   render() {
     // console.log(this.state.player);
     // Set up a conditional render. PlayerPopulator wont render unless a player is selected from the dropdown
-    if (this.state.player.age) {
+    if (this.state.player.firstName) {
       return (
         <div className="searchContainer">
           <div className="searchHeader">
