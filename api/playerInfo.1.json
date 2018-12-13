@@ -51,25 +51,25 @@
       "id": 1,
       "users_id": 1,
       "playersId": 9157,
-      "message": "Hello"
+      "message": "Watch a highlight video of his and you'll quickly understand why Kyrie is in my Squad."
     },
     {
       "users_id": 1,
       "playersId": 13730,
       "id": 2,
-      "message": ""
+      "message": "He's 20 years old and already one of the best players in the game."
     },
     {
       "users_id": 1,
       "playersId": 10090,
       "id": 3,
-      "message": ""
+      "message": "As impressed as I am by Jaylen's game on the court, I'm even more impressed with his overall acumen off the court."
     },
     {
       "users_id": 1,
       "playersId": 9292,
       "id": 4,
-      "message": ""
+      "message": "This guy is 42 years old and is still playing at a high-level. That's amazing."
     },
     {
       "users_id": 2,
@@ -85,21 +85,69 @@
     },
     {
       "users_id": 1,
-      "playersId": 9250,
-      "id": 9,
-      "message": ""
-    },
-    {
-      "users_id": 1,
       "playersId": 9218,
       "id": 10,
-      "message": ""
+      "message": "I mean, who doesn't like Stephen? The guy is simply amazing."
     },
     {
-      "users_id": 1,
-      "playersId": 9158,
-      "id": 11,
-      "message": ""
+      "users_id": 8,
+      "playersId": 9506,
+      "message": "",
+      "id": 11
+    },
+    {
+      "users_id": 8,
+      "playersId": 9526,
+      "message": "",
+      "id": 12
+    },
+    {
+      "users_id": 8,
+      "playersId": 9315,
+      "message": "",
+      "id": 13
+    },
+    {
+      "users_id": 8,
+      "playersId": 9250,
+      "message": "",
+      "id": 14
+    },
+    {
+      "users_id": 8,
+      "playersId": 9161,
+      "message": "",
+      "id": 15
+    },
+    {
+      "users_id": 8,
+      "playersId": 9174,
+      "message": "",
+      "id": 16
+    },
+    {
+      "users_id": 8,
+      "playersId": 9446,
+      "message": "",
+      "id": 17
+    },
+    {
+      "users_id": 8,
+      "playersId": 9082,
+      "message": "",
+      "id": 18
+    },
+    {
+      "users_id": 8,
+      "playersId": 9265,
+      "message": "",
+      "id": 19
+    },
+    {
+      "users_id": 8,
+      "playersId": 9399,
+      "message": "",
+      "id": 20
     }
   ],
   "players": [

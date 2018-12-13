@@ -1,7 +1,13 @@
 .squadContainer {
-  display: flex;
+  /* display: flex;
+  flex-wrap: wrap */
+  display: grid !important;
+  grid-template-columns: auto auto;
 }
 
 .squadPlayer {
   /* display: flex; */
+  /* border: 2px solid rgb(250, 145, 7); */
+  border: 2px solid black;
+  margin: 5px;
 }

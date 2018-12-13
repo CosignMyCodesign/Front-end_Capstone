@@ -25,7 +25,7 @@ export default class PlayerCard extends Component {
       sessionStorage.getItem("credentials")
     ).then(squads => {
       if (squads.length !== 0) {
-        this.setState({ squads: true, squadId: squads[0].id});
+        this.setState({ squads: true, squadId: squads[0].id, message: squads[0].message});
       }
     });
   }
@@ -78,6 +78,8 @@ export default class PlayerCard extends Component {
             College: {targetedPlayer.college}
             <br />
             Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
+            <br />
+            <h4>{this.state.message}</h4>
           </div>
           <div className="form">
             <Form>

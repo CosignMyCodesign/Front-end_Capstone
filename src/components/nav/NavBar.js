@@ -32,7 +32,7 @@ export default class NavBar extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu>
+      <Menu color="orange">
         <Image
           className="nav-logo"
           src="http://www.clipartsuggest.com/images/845/basketball-team-silhouette-clip-art-bQ8xKM-clipart.jpg"
