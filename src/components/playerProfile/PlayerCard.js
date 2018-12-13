@@ -6,8 +6,9 @@ import "./PlayerCard.css";
 
 export default class PlayerCard extends Component {
   state = {
-    squads: false
-  }
+    squads: false,
+    message: ""
+  };
 
   componentDidMount() {
     const playerSelection = this.props.players.map(m => m) || {};
@@ -23,11 +24,26 @@ export default class PlayerCard extends Component {
       targetedPlayer.id,
       sessionStorage.getItem("credentials")
     ).then(squads => {
-      if(squads.length !== 0) {
-        this.setState({squads: true})
+      if (squads.length !== 0) {
+        this.setState({ squads: true, squadId: squads[0].id});
       }
-    })
+    });
   }
+
+  addMessage = evt => {
+    evt.preventDefault()
+    const playerMessage = {
+      message: this.state.message
+      }
+      APIManager.patch("squads", this.state.squadId, playerMessage )
+    }
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
+
   render() {
     const playerSelection = this.props.players.map(m => m) || {};
     // console.log(playerSelection)
@@ -39,9 +55,7 @@ export default class PlayerCard extends Component {
 
     // console.log(targetedPlayer.id)
 
-    if (
-     this.state.squads === true
-    ) {
+    if (this.state.squads === true) {
       return (
         <section>
           <div className="playerCard" key={targetedPlayer.id}>
@@ -69,14 +83,20 @@ export default class PlayerCard extends Component {
             <Form>
               <Form.Field>
                 <label>Save a message about this player</label>
-                <input />
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={this.handleFieldChange}
+                  value={this.state.message}
+                  id="message"
+                />
               </Form.Field>
               <div className="buttonGroup">
                 <Button
                   type="submit"
                   color="green"
                   floated="right"
-                  // onClick=
+                  onClick={this.addMessage}
                 >
                   Save Message
                 </Button>
@@ -127,6 +147,18 @@ export default class PlayerCard extends Component {
             <br />
             Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
           </div>
+          <Button type="submit" color="blue" floated="left" as={Link} to="/">
+            Search for Another Player
+          </Button>
+          <Button
+            type="submit"
+            color="orange"
+            floated="left"
+            as={Link}
+            to={`/viewsquad/${sessionStorage.getItem("credentials")}`}
+          >
+            View My Squad
+          </Button>
         </section>
       );
     }

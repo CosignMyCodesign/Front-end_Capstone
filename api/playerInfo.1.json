@@ -51,47 +51,55 @@
       "id": 1,
       "users_id": 1,
       "playersId": 9157,
-      "message": "I love this guy"
+      "message": "Hello"
     },
     {
       "users_id": 1,
       "playersId": 13730,
-      "id": 2
+      "id": 2,
+      "message": ""
     },
     {
       "users_id": 1,
       "playersId": 10090,
-      "id": 3
+      "id": 3,
+      "message": ""
     },
     {
       "users_id": 1,
       "playersId": 9292,
-      "id": 4
+      "id": 4,
+      "message": ""
     },
     {
       "users_id": 2,
       "playersId": 9466,
-      "id": 5
+      "id": 5,
+      "message": ""
     },
     {
       "users_id": 2,
       "playersId": 9299,
-      "id": 6
+      "id": 6,
+      "message": ""
     },
     {
       "users_id": 1,
       "playersId": 9250,
-      "id": 9
+      "id": 9,
+      "message": ""
     },
     {
       "users_id": 1,
       "playersId": 9218,
-      "id": 10
+      "id": 10,
+      "message": ""
     },
     {
       "users_id": 1,
       "playersId": 9158,
-      "id": 11
+      "id": 11,
+      "message": ""
     }
   ],
   "players": [
