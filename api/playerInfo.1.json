@@ -51,7 +51,7 @@
       "id": 1,
       "users_id": 1,
       "playersId": 9157,
-      "message": "Watch a highlight video of his and you'll quickly understand why Kyrie is in my Squad."
+      "message": "Watch a highlight video of his and you'll quickly understand why Kyrie is "
     },
     {
       "users_id": 1,
@@ -148,6 +148,36 @@
       "playersId": 9399,
       "message": "",
       "id": 20
+    },
+    {
+      "users_id": 1,
+      "playersId": 9212,
+      "message": "",
+      "id": 21
+    },
+    {
+      "users_id": 1,
+      "playersId": 9317,
+      "message": "",
+      "id": 22
+    },
+    {
+      "users_id": 1,
+      "playersId": 9390,
+      "message": "Steven is the youngest of 18 siblings. The average height of this children in his family is 6'8\"!",
+      "id": 23
+    },
+    {
+      "users_id": 1,
+      "playersId": 13778,
+      "message": "Besides his name being awesome, his nickname is \"The Dancing Bear\".",
+      "id": 24
+    },
+    {
+      "users_id": 1,
+      "playersId": 9158,
+      "message": "",
+      "id": 25
     }
   ],
   "players": [
