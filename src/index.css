@@ -14,3 +14,11 @@ code {
   
     monospace;
 }
+
+body {
+  background-color: tomato;
+}
+
+.container {
+  background-color: white;
+}

@@ -32,3 +32,7 @@ font-family: 'Bungee Inline', cursive; */
   height: 70px;
   border-radius: 30px
 }
+
+.menu {
+  margin-bottom: 50px !important
+}

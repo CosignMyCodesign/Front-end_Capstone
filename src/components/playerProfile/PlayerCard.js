@@ -34,6 +34,7 @@ export default class PlayerCard extends Component {
     });
   }
 
+
   addMessage = evt => {
     evt.preventDefault();
     const playerMessage = {
