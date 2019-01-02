@@ -41,6 +41,7 @@ export default class PlayerCard extends Component {
       message: this.state.message
     };
     APIManager.patch("squads", this.state.squadId, playerMessage);
+    alert("Your note has been saved!")
   };
 
   handleFieldChange = evt => {
@@ -115,7 +116,7 @@ export default class PlayerCard extends Component {
                   floated="right"
                   onClick={this.addMessage}
                 >
-                  Save Message
+                  Save Note
                 </Button>
                 <Button
                   type="submit"
