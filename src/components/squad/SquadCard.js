@@ -12,12 +12,12 @@ export default class SquadCard extends Component {
     return (
       <div className="squadPlayer">
         <h3>
-         {this.props.squad.players.firstName} {this.props.squad.players.lastName}
+         {this.props.squad.players.firstName} {this.props.squad.players.lastName}  #{this.props.squad.players.jerseyNumber}
         </h3>
 
         <Image alt="headshot" src={this.props.squad.players.officialImageSrc} />
         <br />
-        <Button.Group className="buttonGroup" size="mini">
+        <Button.Group className="buttonGroup" id="squadButtons" size="mini">
           <Button
             className="button-link"
             color="blue"

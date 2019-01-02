@@ -8,6 +8,44 @@
 .squadPlayer {
   /* display: flex; */
   /* border: 2px solid rgb(250, 145, 7); */
-  border: 2px solid black;
-  margin: 5px;
+  /* border: 2px solid black; */
+  /* margin: 5px; */
+  border: 3px solid #d6850a;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center; 
+  font-family: 'Staatliches', cursive;
+  font-size: large;
+  /* position: relative; */
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 10px;
+  min-width: 230px; 
+  max-width: 1100px; 
+  width: 540px;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  
+}
+
+.squadPlayer img {
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+  border-radius: 50%;
+  background-color: #fc7a01e7 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#squadButtons {
+  display: flex;
+  align-items: center;
+  width: 100%
 }

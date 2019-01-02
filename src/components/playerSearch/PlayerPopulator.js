@@ -38,7 +38,7 @@ export default class PlayerPopulator extends Component {
           <br />
           <br />
           <div>
-            <Button.Group className="buttonGroup">
+            <Button.Group className="buttonGroup" id="populatorButtons">
               <Button
                 className="button-link"
                 color="blue"
