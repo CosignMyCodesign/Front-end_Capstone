@@ -24,7 +24,7 @@ h3 {
 }
 
 .playerCard {
-  border: 5px solid #d6850a;
+  border: 12px groove #f89603;
   display: flex;
   margin: 20px;
   flex-direction: column;
@@ -41,8 +41,19 @@ h3 {
   color: #ffffff;
   text-align: left;
   line-height: 1.4em;
-  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
-  
+  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+  padding-bottom: 50px;
+}
+
+#playerSection {
+  padding-bottom: 50px;
+  /* margin-bottom: 50px */
 }
 
 .playerCard * {
@@ -59,4 +70,8 @@ h3 {
   border-radius: 50%;
   background-color: #fc7a01e7;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#saveNote {
+  font-size: large
 }

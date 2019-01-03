@@ -63,7 +63,7 @@ export default class PlayerCard extends Component {
 
     if (this.state.squads === true) {
       return (
-        <section>
+        <section id="playerSection">
           <div className="playerCard" key={targetedPlayer.id}>
             <div className="playerName">
               <h3>
@@ -92,7 +92,7 @@ export default class PlayerCard extends Component {
               Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
               <br />
             </div>
-            <div className="playerNote">Note on this Player</div>
+            <div className="playerNote">Note on {targetedPlayer.firstName} {targetedPlayer.lastName}</div>
             <div className="playerNoteContent">
               <h4>{this.state.message}</h4>
             </div>
@@ -100,7 +100,7 @@ export default class PlayerCard extends Component {
           <div className="form">
             <Form>
               <Form.Field>
-                <label>Save a note about this player</label>
+                <label id="saveNote">Save a note about this player</label>
                 <input
                   type="text"
                   className="form-control"
@@ -143,7 +143,7 @@ export default class PlayerCard extends Component {
       );
     } else {
       return (
-        <section>
+        <section id="playerSection">
           <div className="playerCard" key={targetedPlayer.id}>
             <div className="playerName">
               <h3>
