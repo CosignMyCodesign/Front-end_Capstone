@@ -1,7 +1,9 @@
 .searchContainer {
   display: flex;
   flex-direction: column;
-  margin: 20px
+  margin: 20px;
+  margin-top: 50px;
+  padding-bottom: 60px
 }
 
 .searchHeader {
@@ -13,4 +15,9 @@
 .searchBox {
   display: flex;
   justify-content: center
+}
+
+.ui {
+  font-size: large;
+  font-weight: bolder
 }

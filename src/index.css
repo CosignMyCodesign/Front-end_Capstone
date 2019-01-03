@@ -7,10 +7,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(http://s1.picswalls.com/wallpapers/2014/07/25/basketball-background_041013638_92.jpg) */
 }
+
+#root {
+  background:   
+    linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.6)),
+    url(https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fmhnation.com%2Fwp-content%2Fuploads%2F2016%2F03%2FiStock_000059188864_XXXLarge-e1459304602927.jpg&f=1) no-repeat fixed;
+  /* background-repeat: no-repeat;
+  background-position: fixed; */
+  background-size: cover;
+  background-position: center center;
+  /* max-width: 100%; */
+  min-height: 100vh;
+  
+}
+
+.item {
+  font-size: large
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  
     monospace;
+}
+
+.container {
+  background:
+linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px;
 }

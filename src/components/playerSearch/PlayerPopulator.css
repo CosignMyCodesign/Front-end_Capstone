@@ -1,13 +1,45 @@
 .populatorContainer {
   display: flex;
   justify-content: center;
-  margin: 20px
+  margin: 10px
+}
+
+.selectedPlayer {
+  border: 12px groove #f89603;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center; 
+  font-family: 'Staatliches', cursive;
+  font-size: large;
+  /* position: relative; */
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 10px;
+  min-height: 311px;
+  min-width: 430px; 
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+}
+
+#populatorButtons {
+  display: flex;
+  align-items: center;
+  width: 100%
 }
 
 
-
-/* Need to put button group in a div first */
 /* .buttonGroup {
   display: flex;
-  justify-content: center
+  align-items: center;
+  width: 100%
 } */

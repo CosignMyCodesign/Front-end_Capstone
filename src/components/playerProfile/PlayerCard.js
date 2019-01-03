@@ -25,18 +25,24 @@ export default class PlayerCard extends Component {
       sessionStorage.getItem("credentials")
     ).then(squads => {
       if (squads.length !== 0) {
-        this.setState({ squads: true, squadId: squads[0].id, message: squads[0].message});
+        this.setState({
+          squads: true,
+          squadId: squads[0].id,
+          message: squads[0].message
+        });
       }
     });
   }
 
+
   addMessage = evt => {
-    evt.preventDefault()
+    evt.preventDefault();
     const playerMessage = {
       message: this.state.message
-      }
-      APIManager.patch("squads", this.state.squadId, playerMessage )
-    }
+    };
+    APIManager.patch("squads", this.state.squadId, playerMessage);
+    alert("Your note has been saved!")
+  };
 
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -57,34 +63,44 @@ export default class PlayerCard extends Component {
 
     if (this.state.squads === true) {
       return (
-        <section>
+        <section id="playerSection">
           <div className="playerCard" key={targetedPlayer.id}>
-            <h3>
-              {targetedPlayer.firstName} {targetedPlayer.lastName}
-            </h3>
+            <div className="playerName">
+              <h3>
+                {targetedPlayer.firstName} {targetedPlayer.lastName} #
+                {targetedPlayer.jerseyNumber}
+              </h3>
+            </div>
             <br />
-            <img alt="player" src={targetedPlayer.officialImageSrc} />
+            <div className="playerImage">
+              <img alt="player" src={targetedPlayer.officialImageSrc} />
+            </div>
             <br />
             {/* Team: {targetedPlayer.currentTeam.abbreviation} */}
             <br />
-            Position: {targetedPlayer.primaryPosition}
-            <br />
-            Age: {targetedPlayer.age}
-            <br />
-            Height: {targetedPlayer.height}
-            <br />
-            Weight: {targetedPlayer.weight}
-            <br />
-            College: {targetedPlayer.college}
-            <br />
-            Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
-            <br />
-            <h4>{this.state.message}</h4>
+            <div className="playerInfo">
+              Position: {targetedPlayer.primaryPosition}
+              <br />
+              Age: {targetedPlayer.age}
+              <br />
+              Height: {targetedPlayer.height}
+              <br />
+              Weight: {targetedPlayer.weight}
+              <br />
+              College: {targetedPlayer.college}
+              <br />
+              Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
+              <br />
+            </div>
+            <div className="playerNote">Note on {targetedPlayer.firstName} {targetedPlayer.lastName}</div>
+            <div className="playerNoteContent">
+              <h4>{this.state.message}</h4>
+            </div>
           </div>
           <div className="form">
             <Form>
               <Form.Field>
-                <label>Save a message about this player</label>
+                <label id="saveNote">Save a note about this player</label>
                 <input
                   type="text"
                   className="form-control"
@@ -100,7 +116,7 @@ export default class PlayerCard extends Component {
                   floated="right"
                   onClick={this.addMessage}
                 >
-                  Save Message
+                  Save Note
                 </Button>
                 <Button
                   type="submit"
@@ -127,27 +143,34 @@ export default class PlayerCard extends Component {
       );
     } else {
       return (
-        <section>
+        <section id="playerSection">
           <div className="playerCard" key={targetedPlayer.id}>
-            <h3>
-              {targetedPlayer.firstName} {targetedPlayer.lastName}
-            </h3>
+            <div className="playerName">
+              <h3>
+                {targetedPlayer.firstName} {targetedPlayer.lastName} #
+                {targetedPlayer.jerseyNumber}
+              </h3>
+            </div>
             <br />
-            <img alt="player" src={targetedPlayer.officialImageSrc} />
+            <div className="playerImage">
+              <img alt="player" src={targetedPlayer.officialImageSrc} />
+            </div>
             <br />
             {/* Team: {targetedPlayer.currentTeam.abbreviation} */}
             <br />
-            Position: {targetedPlayer.primaryPosition}
-            <br />
-            Age: {targetedPlayer.age}
-            <br />
-            Height: {targetedPlayer.height}
-            <br />
-            Weight: {targetedPlayer.weight}
-            <br />
-            College: {targetedPlayer.college}
-            <br />
-            Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
+            <div className="playerInfo">
+              Position: {targetedPlayer.primaryPosition}
+              <br />
+              Age: {targetedPlayer.age}
+              <br />
+              Height: {targetedPlayer.height}
+              <br />
+              Weight: {targetedPlayer.weight}
+              <br />
+              College: {targetedPlayer.college}
+              <br />
+              Born in: {targetedPlayer.birthCity} {targetedPlayer.birthCountry}
+            </div>
           </div>
           <Button type="submit" color="blue" floated="left" as={Link} to="/">
             Search for Another Player

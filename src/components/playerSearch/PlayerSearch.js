@@ -53,7 +53,7 @@ export default class PlayerSearch extends Component {
       return (
         <div className="searchContainer">
           <div className="searchHeader">
-            <Header size="medium">
+            <Header size="large">
               Begin by typing a player's name and selecting.
             </Header>
           </div>
