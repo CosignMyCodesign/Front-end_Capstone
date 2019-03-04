@@ -1,44 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Squad Spawn
 
-## Available Scripts
+Growing up, I spent countless hours researching my favorite athletes. It proved tedious to navigate between multiple websites and team pages/ rosters to find information about the player I was interested in. I created Spawn Squad to fill this void. With Spawn Squad a user can assemble a team of their favorite NBA players and easily navigate between player profiles, save notes about individual players, and also delete players from their squad if needed. It's quick, clean, and easy-to-use. My favorite thing about Squad Spawn is that it provides me endless room for improvement and added content/functionality in the future. It will be a one-stop website to view player information, statistics, videos, and news articles. Squad Spawn is a single-page responsive CRUD web application built in React.Js with Semantic UI React for styling and design. It utilizes a custom JSON database containing vast information about each player in the NBA. 
 
-In the project directory, you can run:
+I built this application for my front end capstone project for Nashville Software School.
 
-### `npm start`
+## Using the app
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If you'd like to see an existing user's login, try logging in with username "Dillon" and password "Cowboys".
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* Note that this version of Squad Spawn does not offer secure storage. Don't save anything sensitive to this database!
 
-### `npm test`
+Now that you have the app installed and running, let's build your squad!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Search for a player
 
-### `npm run build`
+Begin by typing a player's name. You'll notice each keystroke is searching the database of player's with that particular string of character's. After searching, you can either view the player's profile, or add them to your squad.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Viewing Profile
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+You'll notice the player's basic information on their profile. However if the player has been added to your squad, you'll have the added feature of being able to save a note about that player, as well as edit it anytime.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In version 2.0, I want to incorporate statistics, recent game logs, recent videos, and recent articles into this player profile page with the option of being able to save videos and articles for each players on your squad.
+### Viewing your Squad
 
-### `npm run eject`
+When viewing your squad you will still have the same ability of being able to view that player's profile (with the added feature of saving a note specific to that player). You can also remove an player from your squad as well.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In version 2.0, I will make the player cards draggable so users can easily reorder their squad.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+To start, you'll need to download and install NPM. [Get it here.](https://www.npmjs.com/get-npm)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open your command line and type
+
+```
+git clone git@github.com:CosignMyCodesign/Front-end_Capstone.git
+```
+
+One more step for installing everything...
+
+```
+npm install
+```
+
+
+Now we need to start the server. Navigate to the api folder by typing
+
+```
+cd api
+```
+
+To start the server, type
+
+```
+json-server -w -p 5002 playerInfo.1.json
+```
+
+Open a second command line window and navigate to the same directory. To start the app, type
+
+```
+npm start
+``` 
+
+## Built With
+
+* [React](https://reactjs.org/) - Web framework
+* [NPM](https://www.npmjs.com/) - Dependency management
+* [Semantic UI React](https://react.semantic-ui.com/) - Styling components
+
+## Future versions
+
+I plan to deploy Squad Spawn using Heroku.
+
+In version 2.0 of Squad Spawn, I plan to implement
+* Player statistics
+* Recent game logs (specific to that player)
+* Recent Youtube videos  (specific to that player) using Youtube's API
+* Recent news articles  (specific to that player) using Google's API
+* Secure login via Auth0
+* Draggable player cards
