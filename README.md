@@ -4,29 +4,6 @@ Growing up, I spent countless hours researching my favorite athletes. It proved 
 
 I built this application for my front end capstone project for Nashville Software School.
 
-## Using the app
-
-If you'd like to see an existing user's login, try logging in with username "Dillon" and password "Cowboys".
-
-* Note that this version of Squad Spawn does not offer secure storage. Don't save anything sensitive to this database!
-
-Now that you have the app installed and running, let's build your squad!
-
-### Search for a player
-
-Begin by typing a player's name. You'll notice each keystroke is searching the database of player's with that particular string of character's. After searching, you can either view the player's profile, or add them to your squad.
-
-### Viewing Profile
-
-You'll notice the player's basic information on their profile. However if the player has been added to your squad, you'll have the added feature of being able to save a note about that player, as well as edit it anytime.
-
-In version 2.0, I want to incorporate statistics, recent game logs, recent videos, and recent articles into this player profile page with the option of being able to save videos and articles for each players on your squad.
-### Viewing your Squad
-
-When viewing your squad you will still have the same ability of being able to view that player's profile (with the added feature of saving a note specific to that player). You can also remove an player from your squad as well.
-
-In version 2.0, I will make the player cards draggable so users can easily reorder their squad.
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -67,6 +44,27 @@ Open a second command line window and navigate to the same directory. To start t
 ```
 npm start
 ``` 
+
+## Using the app
+
+If you'd like to see an existing user's login, try logging in with username "Dillon" and password "Cowboys".
+
+* Note that this version of Squad Spawn does not offer secure storage. Don't save anything sensitive to this database!
+
+Now that you have the app installed and running, let's build your squad!
+
+### Search for a player
+
+Begin by typing a player's name. You'll notice each keystroke is searching the database of player's with that particular string of character's. After searching, you can either view the player's profile, or add them to your squad.
+
+### Viewing Profile
+
+You'll notice the player's basic information on their profile. However if the player has been added to your squad, you'll have the added feature of being able to save a note about that player, as well as edit it anytime.
+
+In version 2.0, I want to incorporate statistics, recent game logs, recent videos, and recent articles into this player profile page with the option of being able to save videos and articles for each players on your squad.
+### Viewing your Squad
+
+When viewing your squad you will still have the same ability of being able to view that player's profile (with the added feature of saving a note specific to that player). You can also remove an player from your squad as well.
 
 ## Built With
 
